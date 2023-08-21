@@ -9,9 +9,19 @@
 <body>
     <h1 class="titulo">Visualizador do Raio da Borda</h1>
     <section class="container">
-        <h2>Configure o raio das bordas dos 4 cantos</h2>
-        <div class="caixa-borda"></div>
-        <p class="codigo-css">teste</p>
+        <h2>Digite as bordas em pixels</h2>
+        <div class="configuracoes">
+                <div class="configuracoes-esquerda">
+                    <input type="range" min="0" step="5" max="100" class="top-left" value="0" data-config>
+                    <input type="range" min="0" step="5" max="100" class="botton-left" value="0" data-config> 
+                </div>
+                <div class="caixa-borda"></div>
+                <div class="configuracoes-direita">
+                    <input type="range" min="0" step="5" max="100" class="top-right" value="0" data-config>
+                    <input type="range" min="0" step="5" max="100" class="botton-right" value="0" data-config>
+                </div>
+        </div>
+        <p class="codigo-css"></p>
         <button id="copiar">Copiar</button>
     </section>
 

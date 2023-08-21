@@ -21,11 +21,29 @@ body {
     height: 80%;
 }
 
+.configuracoes {
+    display: flex;
+    margin-top: 32px;
+}
+
+.configuracoes-esquerda, .configuracoes-direita {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 32px;
+}
+
+.configuracoes-esquerda input, .configuracoes-direita input {
+    width: 150px;
+    border: solid crimson;
+    background-color: azure;
+
+}
+
 .caixa-borda {
     background-color: rgb(192, 178, 178);
     height: 150px;
     width: 400px;
-    margin-top: 32px;
 }
 
 .codigo-css {
@@ -36,4 +54,7 @@ body {
 
 #copiar {
     margin-top: 16px;
+    padding: 16px 30px;
+    background-color: darkgrey;
 }
+
