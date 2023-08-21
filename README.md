@@ -2,9 +2,9 @@
 
 O projeto "Visualizador do Raio da Borda" é uma ferramenta interativa que permite aos usuários explorar e visualizar os efeitos da propriedade `border-radius` em uma caixa. A propriedade `border-radius` é comumente usada para arredondar os cantos de elementos HTML e CSS, permitindo criar formas mais suaves e atraentes.
 
-## Histórias de Usuários
+## Características do projeto
 
-O projeto visa atender às seguintes histórias de usuários:
+O projeto visa atender às seguintes situações:
 
 1. O usuário pode ver uma caixa que possui a propriedade `border-radius` aplicada a ela, proporcionando uma experiência visual imediata.
 2. O usuário tem a capacidade de ajustar os quatro valores de `border-radius` que correspondem aos cantos da caixa: superior esquerdo, superior direito, inferior esquerdo e inferior direito. Essa interação permitirá que o usuário veja instantaneamente como as mudanças nos valores afetam a aparência da caixa.
