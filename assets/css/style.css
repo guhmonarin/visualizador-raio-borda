@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 32px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.caixa-borda {
+    background-color: rgb(192, 178, 178);
+    height: 150px;
+    width: 400px;
+    margin-top: 32px;
+}
+
+.codigo-css {
+    background-color: rgb(201, 199, 199);
+    margin-top: 32px;
+    padding: 50px 100px; 
+}
+
+#copiar {
+    margin-top: 16px;
+}
