@@ -7,19 +7,22 @@
     <title>Raio da borda</title>
 </head>
 <body>
-    <h1 class="titulo">Visualizador do Raio da Borda</h1>
+    <h1 class="titulo">Configure o raio das bordas</h1>
     <section class="container">
-        <h2>Digite as bordas em pixels</h2>
+        <input type="range" min="0" step="1" max="100" class="top" value="100" data-config>
         <div class="configuracoes">
-                <div class="configuracoes-esquerda">
-                    <input type="range" min="0" step="5" max="100" class="top-left" value="0" data-config>
-                    <input type="range" min="0" step="5" max="100" class="botton-left" value="0" data-config> 
-                </div>
+                <input type="range" min="0" step="1" max="100" class="left" value="0" data-config>
                 <div class="caixa-borda"></div>
-                <div class="configuracoes-direita">
-                    <input type="range" min="0" step="5" max="100" class="top-right" value="0" data-config>
-                    <input type="range" min="0" step="5" max="100" class="botton-right" value="0" data-config>
-                </div>
+                <input type="range" min="0" step="1" max="100" class="right" value="100" data-config>
+        </div>
+        <input type="range" min="0" step="1" max="100" class="bottom" value="0" data-config>
+        <div class="configurar-tamanho">
+            <p>Tamanho personalizado:</p>
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label for="width" class="tamanhos">Width:</label>
+            <input type="number" name="width" id="width" class="tamanhos input">
+            <label for="height" class="tamanhos">Height:</label>
+            <input type="number" name="height" id="height" class="tamanhos input">
         </div>
         <p class="codigo-css"></p>
         <button id="copiar">Copiar</button>
