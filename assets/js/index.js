@@ -1,6 +1,11 @@
 const config = document.querySelectorAll('[data-config]')
 const caixa = document.querySelector('.caixa-borda')
 const css = document.querySelector('.codigo-css')
+const tamanho = document.querySelectorAll('.tamanhos');
+const check = document.getElementById('checkbox');
+const container = document.querySelector('.container')
+const btn = document.getElementById('copiar');
+
 
 let topo = 100;
 let fundo = 0;
@@ -9,8 +14,38 @@ let esquerda = 0;
 
 gerarCss()
 
-config.forEach(function(elemento){
-    elemento.addEventListener('change', function(){
+function atualizarCss (){
+    caixa.style.borderRadius = `${topo}% ${100-topo}% ${100-fundo}% ${fundo}% / ${esquerda}% ${direita}% ${100-direita}% ${100-esquerda}%`
+    gerarCss();
+}
+
+function gerarCss() {
+    css.innerHTML = `.container {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;border-radius:${topo}% ${100-topo}% ${100-fundo}% ${fundo}% / ${esquerda}% ${direita}% ${100-direita}% ${100-esquerda}% ;<br>
+    }`
+}
+
+function mostrarMensagem(mensagem, sucesso) {
+    const copiado = document.createElement('p')
+    copiado.className = 'copiado';
+    copiado.innerHTML = mensagem;
+    copiado.style.color = sucesso ? 'green' : 'red';
+    container.appendChild(copiado);
+    setTimeout(() => {
+        copiado.remove();
+    }, 5000);
+}
+
+width.addEventListener('change', () => {
+    caixa.style.width = `${width.value}px`
+});
+
+height.addEventListener('change', () => {
+    caixa.style.height = `${height.value}px`
+});
+
+config.forEach(elemento => {
+    elemento.addEventListener('change', () => {
         if(elemento.classList.value === 'top'){
             topo = elemento.value;
         } else if (elemento.classList.value === 'bottom'){
@@ -20,28 +55,25 @@ config.forEach(function(elemento){
         } else if (elemento.classList.value === 'right'){
             direita = elemento.value;
         }
-        caixa.style.borderRadius = `${topo}% ${100-topo}% ${100-fundo}% ${fundo}% / ${esquerda}% ${direita}% ${100-direita}% ${100-esquerda}%`
-        gerarCss();
+        
+        atualizarCss();
     })
 })
 
-function gerarCss() {
-    css.innerHTML = `.border {<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;border-radius:${topo}% ${100-topo}% ${100-fundo}% ${fundo}% / ${esquerda}% ${direita}% ${100-direita}% ${100-esquerda}% ;<br>
-    }`
-}
+check.addEventListener('change',() => {
+    tamanho.forEach(elemento => {
+        elemento.style.visibility = check.checked ? 'visible' : 'hidden';
+    });
+});
 
-const check = document.getElementById('checkbox');
-const tamanho = document.querySelectorAll('.tamanhos')
 
-check.addEventListener('change',function(){
-    if(this.checked) {
-        tamanho.forEach(elemento => {
-            elemento.style.visibility = 'visible'
-        })
-    } else {
-        tamanho.forEach(elemento => {
-            elemento.style.visibility = 'hidden'
-        })
+
+btn.addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText(css.textContent);
+        mostrarMensagem('Copiado com sucesso', true);
+    } catch (err) {
+        mostrarMensagem('Erro ao copiar, tente novamente', false);
     }
 })
+

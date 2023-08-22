@@ -4,13 +4,16 @@
 }
 
 body {
-    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+
 }
 
 .titulo {
     text-align: center;
     font-size: 3rem;
-    margin-top: 32px;
+    padding: 20px;
+    color: #333;
 }
 
 .container {
@@ -18,7 +21,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
 }
 
 .top {
@@ -30,13 +38,7 @@ body {
     width: 400px;
 }
 
-.left {
-    transform: rotate(90deg);
-    margin: 0;
-    width: 150px;
-}
-
-.right {
+.left, .right {
     transform: rotate(90deg);
     margin: 0;
     width: 150px;
@@ -49,27 +51,49 @@ body {
 }
 
 .caixa-borda {
-    background-color: rgb(192, 178, 178);
+    background-color: #ff8a65;
     height: 150px;
     width: 400px;
     margin: 16px 0;
 }
 
 .codigo-css {
-    background-color: rgb(201, 199, 199);
-    margin-top: 32px;
-    padding: 50px 100px; 
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    margin-top: 20px;
 }
 
+.input {
+    width: 60px;
+    padding: 5px;
+  }
+
 #copiar {
-    margin-top: 16px;
-    padding: 16px 30px;
-    background-color: darkgrey;
+    display: block;
+    margin: 20px auto;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+#copiar:hover {
+    background-color: #ff4f4f;
+}
+  
 
 .configurar-tamanho {
     display: flex;
     margin-top: 16px;
+    font-weight: bold;
+    margin-right: 5px;
+    align-items: center;
 }
 
 .configurar-tamanho p {
@@ -89,4 +113,10 @@ body {
 
 .tamanhos.input{
     width: 50px;
+}
+
+.copiado {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 8px;
 }
